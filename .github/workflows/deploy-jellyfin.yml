@@ -1,4 +1,4 @@
-name: deploy-foundryvtt
+name: deploy-jellyfin
 
 on:
   push:
