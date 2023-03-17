@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       parameter:
-        Just a parameter
+        description: Just a parameter
   pull_request: Here
 
 permissions:
