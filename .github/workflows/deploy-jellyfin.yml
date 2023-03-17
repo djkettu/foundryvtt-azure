@@ -1,5 +1,4 @@
 name: deploy-jellyfin
-
 on:
   workflow_dispatch:
     inputs:
