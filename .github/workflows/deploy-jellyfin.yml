@@ -1,14 +1,11 @@
 name: deploy-jellyfin
 
 on:
-  push:
-    branches:
-      - jellyfin
   workflow_dispatch:
     inputs:
       parameter:
         Just a parameter
-   pull_request: Here
+  pull_request: Here
 
 permissions:
   id-token: write
