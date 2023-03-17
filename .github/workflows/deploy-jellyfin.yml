@@ -4,7 +4,7 @@ on:
     inputs:
       parameter:
         description: Just a parameter
-  pull_request: Here
+  pull_request:
 
 permissions:
   id-token: write
