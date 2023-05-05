@@ -18,9 +18,6 @@ on:
       APPSERVICEPLAN_CONFIGURATION:
         required: true
         type: string
-      DEPLOY_DDBPROXY:
-        required: true
-        type: string
     secrets:
       AZURE_TENANT_ID:
         required: true
@@ -69,6 +66,5 @@ jobs:
             foundryAdminKey=${{ secrets.FOUNDRY_ADMIN_KEY }}
             storageConfiguration=${{ inputs.STORAGE_CONFIGURATION }}
             appServicePlanConfiguration=${{ inputs.APPSERVICEPLAN_CONFIGURATION }}
-            deployDdbProxy=${{ inputs.DEPLOY_DDBPROXY }}
 
 

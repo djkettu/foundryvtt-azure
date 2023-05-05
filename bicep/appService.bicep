@@ -25,7 +25,7 @@ param foundryAdminKey string
 ])
 param storageConfiguration string = 'Premium_100GB'
 
-@description('The Azure App Service SKU for running the Foundry VTT server and optionally the DDB-Proxy.')
+@description('The Azure App Service SKU for running the Foundry VTT server.')
 @allowed([
   'F1'
   'B1'
