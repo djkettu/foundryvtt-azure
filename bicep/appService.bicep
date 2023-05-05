@@ -40,9 +40,6 @@ param storageConfiguration string = 'Premium_100GB'
 ])
 param appServicePlanConfiguration string = 'P1V2'
 
-@description('Deploy a D&D Beyond proxy into the app service plan.')
-param deployDdbProxy bool = false
-
 resource rg 'Microsoft.Resources/resourceGroups@2021-04-01' = {
   name: resourceGroupName
   location: location
@@ -87,19 +84,3 @@ module webAppFoundryVtt './modules/webAppFoundryVtt.bicep' = {
     foundryAdminKey: foundryAdminKey
   }
 }
-
-module webAppDdbProxy './modules/webAppDdbProxy.bicep' = if (deployDdbProxy) {
-  name: 'webAppDdbProxy'
-  scope: rg
-  dependsOn: [
-    appServicePlan
-  ]
-  params: {
-    location: location
-    appServicePlanId: appServicePlan.outputs.appServicePlanId
-    webAppName: '${baseResourceName}ddbproxy'
-  }
-}
-
-output url string = webAppFoundryVtt.outputs.url
-output ddbproxyurl string = webAppDdbProxy.outputs.url
